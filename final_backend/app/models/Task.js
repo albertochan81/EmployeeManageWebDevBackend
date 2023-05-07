@@ -1,22 +1,21 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
+module.exports = (sequelize, Sequelize) => {
+    const Task = sequelize.define("task", {
 
-const Task = db.define('task',{
-    description: {
-        type: Sequelize.STRING
-    },
-    priority_level: {
-        type: Sequelize.STRING
-    },
-    completition_stat: {
-        type: Sequelize.BOOLEAN
-    }, 
-    emp_id: {
-        type: Sequelize.INTEGER
-    },
+  description: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
 
-})
-// added extra
-console.log(Task === db.models.Task); 
+  priority_level: {
+    type: Sequelize.STRING
+  },
 
-module.exports = Task;
+  completition_stat: {
+    type: Sequelize.BOOLEAN
+  },
+
+});
+
+    return Task;
+}
+
