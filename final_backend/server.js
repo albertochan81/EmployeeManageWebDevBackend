@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081" // change to heroku
+  origin: "https://final-frontend-group7.herokuapp.com/"||"http://localhost:8081" // change to heroku
 };
 
 app.use(cors(corsOptions));
