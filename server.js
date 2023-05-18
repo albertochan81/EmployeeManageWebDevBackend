@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "https://final-frontend-group7.herokuapp.com"||"http://localhost:8081" // change to heroku
 };
 
 app.use(cors(corsOptions));
@@ -38,7 +38,7 @@ require("./app/routes/employee.routes")(app);
 require("./app/routes/task.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
